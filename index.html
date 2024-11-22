@@ -12,40 +12,38 @@
       box-sizing: border-box;
     }
 
-    /* Body Styling */
-    body {
-      font-family: Arial, sans-serif;
+    /* Fullscreen layout */
+    html, body {
+      height: 100%; /* Full height */
       display: flex;
       flex-direction: column; /* Arrange content vertically */
-      height: 100vh; /* Full height of viewport */
-      overflow: hidden; /* Prevent scrolling */
     }
 
     /* Header styling */
     h1 {
+      flex-shrink: 0; /* Ensure it doesn't shrink */
       text-align: center;
       padding: 20px;
       background-color: #007bff;
       color: white;
       font-size: 24px;
-      flex-shrink: 0; /* Prevents header from shrinking */
     }
 
     /* Chat container styling */
     #chat-container {
-      flex: 1; /* Fill the remaining vertical space */
-      display: flex;
-      justify-content: stretch;
-      align-items: stretch;
+      flex: 1; /* Take up all remaining vertical space */
       background-color: #f9f9f9;
+      position: relative; /* For contained elements */
     }
 
     /* iframe styling */
     iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%; /* Full width */
       height: 100%; /* Full height of container */
-      border: none;
-      display: block; /* Ensure iframe respects container dimensions */
+      border: none; /* No borders for clean design */
     }
   </style>
 </head>
