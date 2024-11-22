@@ -33,7 +33,10 @@
     /* Chatbot Container */
     #chat-container {
       flex: 1; /* Take up remaining vertical space */
-      position: relative; /* Needed for absolute iframe */
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end; /* Push the chatbox to the bottom */
     }
   </style>
 </head>
@@ -53,10 +56,18 @@
       host: 'https://cdn.botpress.cloud',
       botId: 'LO9XPZ9C', // Bot ID from your Botpress setup
       container: '#chat-container', // Target the div where the chat will appear
-      /* Optional settings */
-      showPoweredBy: false, // Hide "Powered by Botpress" (Optional)
-      showCloseButton: false, // Disable close button
-      startVisible: true, // Ensure the chat is visible when the page loads (important for immediate display)
+      showPoweredBy: false, // Hide "Powered by Botpress"
+      startVisible: false, // Chat starts hidden
+    });
+
+    // Wait for the page to load and then simulate the click on the chat icon
+    window.addEventListener('load', function() {
+      // Wait for the Botpress chat icon to be available in the DOM
+      const chatIcon = document.querySelector('.bpw-chat-button'); // Target the chat button
+      if (chatIcon) {
+        // Simulate a click on the chat icon
+        chatIcon.click();
+      }
     });
   </script>
 </body>
