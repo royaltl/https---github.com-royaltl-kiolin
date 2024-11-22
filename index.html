@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fullscreen Chatbot</title>
+  <style>
+    /* Reset margin and padding */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body styling */
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column; /* Arrange content vertically */
+      height: 100vh; /* Full viewport height */
+      overflow: hidden; /* Prevent scrolling */
+    }
+
+    /* Header styling */
+    h1 {
+      text-align: center;
+      padding: 20px;
+      background-color: #007bff;
+      color: white;
+      font-size: 24px;
+    }
+
+    /* Chat container styling */
+    #chat-container {
+      flex: 1; /* Take up all remaining vertical space */
+      display: flex;
+      background-color: #f9f9f9;
+      overflow: hidden; /* Prevent scrollbars */
+    }
+
+    /* iframe styling */
+    iframe {
+      width: 100%; /* Full width */
+      height: 100%; /* Full height of container */
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <h1>Welcome to My Chatbot</h1>
+
+  <!-- Chatbot Container -->
+  <div id="chat-container">
+    <iframe 
+      src="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2024/11/21/16/20241121161320-IPB5351L.json" 
+      title="Chatbot">
+    </iframe>
+  </div>
+</body>
+</html>
